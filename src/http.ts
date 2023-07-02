@@ -1325,12 +1325,17 @@ export class LemmyHttp {
         body: JSON.stringify(form),
       });
     }
-    const json = await response.json();
-
-    if (!response.ok) {
-      throw json["error"] ?? response.statusText;
+    if (response.ok) {
+      return await response.json();
     } else {
-      return json;
+      const content = await response.text();
+      let message;
+      try {
+        message = JSON.parse(content).error;
+      } catch (error) {
+        message = content;
+      }
+      throw { status: response.status, message };
     }
   }
 }
