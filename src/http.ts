@@ -134,6 +134,7 @@ import { TransferCommunity } from "./types/TransferCommunity";
 import { VerifyEmail } from "./types/VerifyEmail";
 import { VerifyEmailResponse } from "./types/VerifyEmailResponse";
 import { UploadImage, UploadImageResponse, VERSION } from "./types/others";
+import { LemmyHttpError } from "./error";
 
 enum HttpType {
   Get = "GET",
@@ -1335,7 +1336,7 @@ export class LemmyHttp {
       } catch (error) {
         message = content;
       }
-      throw { status: response.status, message };
+      throw new LemmyHttpError(response.status, message);
     }
   }
 }
