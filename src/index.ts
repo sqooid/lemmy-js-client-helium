@@ -248,4 +248,4 @@ export { VerifyEmail } from "./types/VerifyEmail";
 export { VerifyEmailResponse } from "./types/VerifyEmailResponse";
 export { ImageFile, UploadImage, UploadImageResponse } from "./types/others";
 
-export { LemmyHttpError } from "./error";
+export * from "./error";
