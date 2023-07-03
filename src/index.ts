@@ -1,3 +1,4 @@
+export * from "./error";
 export * from "./http";
 export { AddAdmin } from "./types/AddAdmin";
 export { AddAdminResponse } from "./types/AddAdminResponse";
@@ -247,5 +248,3 @@ export { UserJoinResponse } from "./types/UserJoinResponse";
 export { VerifyEmail } from "./types/VerifyEmail";
 export { VerifyEmailResponse } from "./types/VerifyEmailResponse";
 export { ImageFile, UploadImage, UploadImageResponse } from "./types/others";
-
-export * from "./error";
