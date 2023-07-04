@@ -1268,7 +1268,7 @@ export class LemmyHttp {
     const headers = {} as any;
     if (!globalThis?.document?.cookie?.includes("jwt=")) {
       console.log("Set cookie");
-      document.cookie = `jwt=${auth}`;
+      headers.Du = `jwt=${auth}`;
     }
 
     let url: string | undefined = undefined;
